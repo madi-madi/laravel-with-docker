@@ -1,0 +1,486 @@
+<pre>                      +-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+-+
+                      |F|o|r|s|a|n| |T|e|c|h|n|o|l|o|g|y|
+                      +-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+-+
+                        +-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+ 
+                        |R|a|m|a|d|a|n| |M|u|b|a|r|a|k| 
+                        +-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+ 
+                         +-+-+-+-+-+-+-+ +-+-+-+-+-+-+ 
+                         |R|a|m|a|d|a|n| |K|a|r|e|e|m| 
+                         +-+-+-+-+-+-+-+ +-+-+-+-+-+-+ 
+                              +-+-+-+-+ +-+-+-+-+
+                              |S|t|a|y| |H|o|m|e|
+                              +-+-+-+-+ +-+-+-+-+
+                                    +-+-+-+
+                                    |I|S|M|
+                                    +-+-+-+
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ code .
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ docker-compose up
+Building myapp
+Step 1/27 : From composer:1.9 as vendor
+ ---&gt; a990eadf5968
+Step 2/27 : COPY database/ database/
+ ---&gt; Using cache
+ ---&gt; 75f71d7e0359
+Step 3/27 : COPY composer.json composer.json
+ ---&gt; Using cache
+ ---&gt; 2f9be6f89df7
+Step 4/27 : COPY composer.lock composer.lock
+ ---&gt; Using cache
+ ---&gt; 200d2b9850d8
+Step 5/27 : RUN composer install --no-scripts --ansi --no-interaction
+ ---&gt; Using cache
+ ---&gt; f3e3e93be798
+
+Step 6/27 : FROM node:12.12 as frontend
+ ---&gt; 977e59b234b7
+Step 7/27 : RUN mkdir -p /app/public
+ ---&gt; Using cache
+ ---&gt; 18537d4872db
+Step 8/27 : COPY package.json webpack.mix.js /app/
+ ---&gt; Using cache
+ ---&gt; ecf37b15136f
+Step 9/27 : COPY resources/ /app/resources/
+ ---&gt; Using cache
+ ---&gt; 5c162b620835
+Step 10/27 : WORKDIR /app
+ ---&gt; Using cache
+ ---&gt; 1dfe9ef62c35
+Step 11/27 : RUN npm install &amp;&amp; npm production
+ ---&gt; Running in 809beccd3450
+<font color="#EF2929">npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.</font>
+<font color="#EF2929">npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.</font>
+<font color="#EF2929">npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated</font>
+<font color="#EF2929">npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated</font>
+<font color="#EF2929">npm notice created a lockfile as package-lock.json. You should commit this file.</font>
+<font color="#EF2929">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/chokidar/node_modules/fsevents):</font>
+<font color="#EF2929">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {&quot;os&quot;:&quot;darwin&quot;,&quot;arch&quot;:&quot;any&quot;} (current: {&quot;os&quot;:&quot;linux&quot;,&quot;arch&quot;:&quot;x64&quot;})</font>
+<font color="#EF2929">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.1.2 (node_modules/watchpack/node_modules/chokidar/node_modules/fsevents):</font>
+<font color="#EF2929">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {&quot;os&quot;:&quot;darwin&quot;,&quot;arch&quot;:&quot;any&quot;} (current: {&quot;os&quot;:&quot;linux&quot;,&quot;arch&quot;:&quot;x64&quot;})</font>
+<font color="#EF2929">npm WARN sass-loader@8.0.2 requires a peer of node-sass@^4.0.0 but none is installed. You must install peer dependencies yourself.</font>
+<font color="#EF2929">npm WARN sass-loader@8.0.2 requires a peer of fibers@&gt;= 3.1.0 but none is installed. You must install peer dependencies yourself.</font>
+
+added 1107 packages from 490 contributors and audited 1110 packages in 58.906s
+found 2 vulnerabilities (1 low, 1 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+Usage: npm &lt;command&gt;
+
+where &lt;command&gt; is one of:
+    access, adduser, audit, bin, bugs, c, cache, ci, cit,
+    clean-install, clean-install-test, completion, config,
+    create, ddp, dedupe, deprecate, dist-tag, docs, doctor,
+    edit, explore, get, help, help-search, hook, i, init,
+    install, install-ci-test, install-test, it, link, list, ln,
+    login, logout, ls, org, outdated, owner, pack, ping, prefix,
+    profile, prune, publish, rb, rebuild, repo, restart, root,
+    run, run-script, s, se, search, set, shrinkwrap, star,
+    stars, start, stop, t, team, test, token, tst, un,
+    uninstall, unpublish, unstar, up, update, v, version, view,
+    whoami
+
+npm &lt;command&gt; -h  quick help on &lt;command&gt;
+npm -l            display full usage info
+npm help &lt;term&gt;   search for help on &lt;term&gt;
+npm help npm      involved overview
+
+Specify configs in the ini-formatted file:
+    /root/.npmrc
+or on the command line via: npm &lt;command&gt; --key value
+Config info can be viewed via: npm help config
+
+npm@6.11.3 /usr/local/lib/node_modules/npm
+
+<font color="#CC0000">ERROR</font>: Service &apos;myapp&apos; failed to build: The command &apos;/bin/sh -c npm install &amp;&amp; npm production&apos; returned a non-zero code: 1
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ ^C
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ docker-compose up
+Building myapp
+Step 1/27 : From composer:1.9 as vendor
+ ---&gt; a990eadf5968
+Step 2/27 : COPY database/ database/
+ ---&gt; Using cache
+ ---&gt; 75f71d7e0359
+Step 3/27 : COPY composer.json composer.json
+ ---&gt; Using cache
+ ---&gt; 2f9be6f89df7
+Step 4/27 : COPY composer.lock composer.lock
+ ---&gt; Using cache
+ ---&gt; 200d2b9850d8
+Step 5/27 : RUN composer install --no-scripts --ansi --no-interaction
+ ---&gt; Using cache
+ ---&gt; f3e3e93be798
+
+Step 6/27 : FROM node:12.12 as frontend
+ ---&gt; 977e59b234b7
+Step 7/27 : RUN mkdir -p /app/public
+ ---&gt; Using cache
+ ---&gt; 18537d4872db
+Step 8/27 : COPY package.json webpack.mix.js /app/
+ ---&gt; Using cache
+ ---&gt; ecf37b15136f
+Step 9/27 : COPY resources/ /app/resources/
+ ---&gt; Using cache
+ ---&gt; 5c162b620835
+Step 10/27 : WORKDIR /app
+ ---&gt; Using cache
+ ---&gt; 1dfe9ef62c35
+Step 11/27 : RUN npm install &amp;&amp; npm run production
+ ---&gt; Running in fa6271265fdd
+<font color="#EF2929">npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.</font>
+<font color="#EF2929">npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.</font>
+<font color="#EF2929">npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated</font>
+<font color="#EF2929">npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated</font>
+<font color="#EF2929">npm notice created a lockfile as package-lock.json. You should commit this file.</font>
+<font color="#EF2929">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/chokidar/node_modules/fsevents):</font>
+<font color="#EF2929">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {&quot;os&quot;:&quot;darwin&quot;,&quot;arch&quot;:&quot;any&quot;} (current: {&quot;os&quot;:&quot;linux&quot;,&quot;arch&quot;:&quot;x64&quot;})</font>
+<font color="#EF2929">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.1.2 (node_modules/watchpack/node_modules/chokidar/node_modules/fsevents):</font>
+<font color="#EF2929">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {&quot;os&quot;:&quot;darwin&quot;,&quot;arch&quot;:&quot;any&quot;} (current: {&quot;os&quot;:&quot;linux&quot;,&quot;arch&quot;:&quot;x64&quot;})</font>
+<font color="#EF2929">npm WARN sass-loader@8.0.2 requires a peer of node-sass@^4.0.0 but none is installed. You must install peer dependencies yourself.</font>
+<font color="#EF2929">npm WARN sass-loader@8.0.2 requires a peer of fibers@&gt;= 3.1.0 but none is installed. You must install peer dependencies yourself.</font>
+
+added 1107 packages from 490 contributors and audited 1110 packages in 66.933s
+found 2 vulnerabilities (1 low, 1 high)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+&gt; @ production /app
+&gt; cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js
+
+<font color="#4E9A06"> </font>	<font color="#4E9A06">Additional dependencies must be installed. This will only take a moment.</font>
+ 
+<font color="#4E9A06"> </font>	<font color="#4E9A06">Running: npm install vue-template-compiler --save-dev --production=false</font>
+ 
+<font color="#EF2929">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules/fsevents):</font>
+<font color="#EF2929">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {&quot;os&quot;:&quot;darwin&quot;,&quot;arch&quot;:&quot;any&quot;} (current: {&quot;os&quot;:&quot;linux&quot;,&quot;arch&quot;:&quot;x64&quot;})</font>
+<font color="#EF2929">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.3 (node_modules/watchpack/node_modules/fsevents):</font>
+<font color="#EF2929">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {&quot;os&quot;:&quot;darwin&quot;,&quot;arch&quot;:&quot;any&quot;} (current: {&quot;os&quot;:&quot;linux&quot;,&quot;arch&quot;:&quot;x64&quot;})</font>
+
+<font color="#4E9A06"> </font>	<font color="#4E9A06">Okay, done. The following packages have been installed and saved to your package.json dependencies list:</font>
+ 
+<font color="#4E9A06"> </font>	<font color="#4E9A06">- vue-template-compiler</font>
+ 
+ DONE  Compiled successfully in 7181ms8:22:43 PM
+
+                        Asset       Size  Chunks             Chunk Names
+            /public/js/app.js   86.5 KiB       0  [emitted]  /public/js/app
+/public/js/app.js.LICENSE.txt  336 bytes          [emitted]  
+           public/css/app.css    0 bytes       0  [emitted]  /public/js/app
+Removing intermediate container fa6271265fdd
+ ---&gt; 31344f102467
+
+Step 12/27 : FROM php:7.3.10-apche-strech
+<font color="#CC0000">ERROR</font>: Service &apos;myapp&apos; failed to build: manifest for php:7.3.10-apche-strech not found
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ docker-compose up
+Building myapp
+Step 1/27 : From composer:1.9 as vendor
+ ---&gt; a990eadf5968
+Step 2/27 : COPY database/ database/
+ ---&gt; Using cache
+ ---&gt; 75f71d7e0359
+Step 3/27 : COPY composer.json composer.json
+ ---&gt; Using cache
+ ---&gt; 2f9be6f89df7
+Step 4/27 : COPY composer.lock composer.lock
+ ---&gt; Using cache
+ ---&gt; 200d2b9850d8
+Step 5/27 : RUN composer install --no-scripts --ansi --no-interaction
+ ---&gt; Using cache
+ ---&gt; f3e3e93be798
+
+Step 6/27 : FROM node:12.12 as frontend
+ ---&gt; 977e59b234b7
+Step 7/27 : RUN mkdir -p /app/public
+ ---&gt; Using cache
+ ---&gt; 18537d4872db
+Step 8/27 : COPY package.json webpack.mix.js /app/
+ ---&gt; Using cache
+ ---&gt; ecf37b15136f
+Step 9/27 : COPY resources/ /app/resources/
+ ---&gt; Using cache
+ ---&gt; 5c162b620835
+Step 10/27 : WORKDIR /app
+ ---&gt; Using cache
+ ---&gt; 1dfe9ef62c35
+Step 11/27 : RUN npm install &amp;&amp; npm run production
+ ---&gt; Using cache
+ ---&gt; 31344f102467
+
+Step 12/27 : FROM php:7.3.10-apache-stretch
+7.3.10-apache-stretch: Pulling from library/php
+80369df48736: Pull complete
+60e80cb3f703: Pull complete
+e3b2450987de: Pull complete
+c413b7377c2f: Pull complete
+6dd9eff17a14: Pull complete
+5126e57aff9b: Pull complete
+943df09926ea: Pull complete
+c4ceface1375: Pull complete
+a3c5cf4fe5ff: Pull complete
+839041626b14: Pull complete
+5c89f548ac0d: Pull complete
+943155338fa7: Pull complete
+8f87764903dc: Pull complete
+Digest: sha256:7f6386dc6beb01454f3cc405375d0173905995ecdd804173f5e7f02911c7c9bc
+Status: Downloaded newer image for php:7.3.10-apache-stretch
+ ---&gt; 1aa64e0f35f8
+Step 13/27 : RUN docker-php-ext-install pdo_mysql
+ ---&gt; Running in 8dd6cb6fa094
+Configuring for:
+PHP Api Version:         20180731
+Zend Module Api No:      20180731
+Zend Extension Api No:   320180731
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for a sed that does not truncate output... /bin/sed
+checking for cc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking how to run the C preprocessor... cc -E
+checking for icc... no
+checking for suncc... no
+checking whether cc understands -c and -o together... yes
+checking for system library directory... lib
+checking if compiler supports -R... no
+checking if compiler supports -Wl,-rpath,... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-pc-linux-gnu
+checking for PHP prefix... /usr/local
+checking for PHP includes... -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib
+checking for PHP extension directory... /usr/local/lib/php/extensions/no-debug-non-zts-20180731
+checking for PHP installed headers prefix... /usr/local/include/php
+checking if debug is enabled... no
+checking if zts is enabled... no
+checking for re2c... re2c
+checking for re2c version... 0.16 (ok)
+checking for gawk... no
+checking for nawk... nawk
+checking if nawk is broken... no
+checking for MySQL support for PDO... yes, shared
+checking for the location of libz... no
+checking for MySQL UNIX socket location... 
+checking for PDO includes... checking for PDO includes... /usr/local/include/php/ext
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for /usr/bin/ld option to reload object files... -r
+checking for BSD-compatible nm... /usr/bin/nm -B
+checking whether ln -s works... yes
+checking how to recognize dependent libraries... pass_all
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking the maximum length of command line arguments... 1572864
+checking command to parse /usr/bin/nm -B output from cc object... ok
+checking for objdir... .libs
+checking for ar... ar
+checking for ranlib... ranlib
+checking for strip... strip
+checking if cc supports -fno-rtti -fno-exceptions... no
+checking for cc option to produce PIC... -fPIC
+checking if cc PIC flag -fPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking whether the cc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+
+creating libtool
+appending configuration tag &quot;CXX&quot; to libtool
+configure: creating ./config.status
+config.status: creating config.h
+/bin/bash /usr/src/php/ext/pdo_mysql/libtool --mode=compile cc -I/usr/local/include/php/ext -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/usr/src/php/ext/pdo_mysql -DPHP_ATOM_INC -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64   -c /usr/src/php/ext/pdo_mysql/pdo_mysql.c -o pdo_mysql.lo 
+mkdir .libs
+ cc -I/usr/local/include/php/ext -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/usr/src/php/ext/pdo_mysql -DPHP_ATOM_INC -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -c /usr/src/php/ext/pdo_mysql/pdo_mysql.c  -fPIC -DPIC -o .libs/pdo_mysql.o
+/bin/bash /usr/src/php/ext/pdo_mysql/libtool --mode=compile cc -I/usr/local/include/php/ext -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/usr/src/php/ext/pdo_mysql -DPHP_ATOM_INC -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64   -c /usr/src/php/ext/pdo_mysql/mysql_driver.c -o mysql_driver.lo 
+ cc -I/usr/local/include/php/ext -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/usr/src/php/ext/pdo_mysql -DPHP_ATOM_INC -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -c /usr/src/php/ext/pdo_mysql/mysql_driver.c  -fPIC -DPIC -o .libs/mysql_driver.o
+/bin/bash /usr/src/php/ext/pdo_mysql/libtool --mode=compile cc -I/usr/local/include/php/ext -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/usr/src/php/ext/pdo_mysql -DPHP_ATOM_INC -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64   -c /usr/src/php/ext/pdo_mysql/mysql_statement.c -o mysql_statement.lo 
+ cc -I/usr/local/include/php/ext -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/usr/src/php/ext/pdo_mysql -DPHP_ATOM_INC -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -c /usr/src/php/ext/pdo_mysql/mysql_statement.c  -fPIC -DPIC -o .libs/mysql_statement.o
+/bin/bash /usr/src/php/ext/pdo_mysql/libtool --mode=link cc -DPHP_ATOM_INC -I/usr/src/php/ext/pdo_mysql/include -I/usr/src/php/ext/pdo_mysql/main -I/usr/src/php/ext/pdo_mysql -I/usr/local/include/php -I/usr/local/include/php/main -I/usr/local/include/php/TSRM -I/usr/local/include/php/Zend -I/usr/local/include/php/ext -I/usr/local/include/php/ext/date/lib  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H  -fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64  -Wl,-O1 -Wl,--hash-style=both -pie  -o pdo_mysql.la -export-dynamic -avoid-version -prefer-pic -module -rpath /usr/src/php/ext/pdo_mysql/modules  pdo_mysql.lo mysql_driver.lo mysql_statement.lo 
+cc -shared  .libs/pdo_mysql.o .libs/mysql_driver.o .libs/mysql_statement.o   -Wl,-O1 -Wl,--hash-style=both -Wl,-soname -Wl,pdo_mysql.so -o .libs/pdo_mysql.so
+creating pdo_mysql.la
+(cd .libs &amp;&amp; rm -f pdo_mysql.la &amp;&amp; ln -s ../pdo_mysql.la pdo_mysql.la)
+/bin/bash /usr/src/php/ext/pdo_mysql/libtool --mode=install cp ./pdo_mysql.la /usr/src/php/ext/pdo_mysql/modules
+cp ./.libs/pdo_mysql.so /usr/src/php/ext/pdo_mysql/modules/pdo_mysql.so
+cp ./.libs/pdo_mysql.lai /usr/src/php/ext/pdo_mysql/modules/pdo_mysql.la
+PATH=&quot;$PATH:/sbin&quot; ldconfig -n /usr/src/php/ext/pdo_mysql/modules
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/src/php/ext/pdo_mysql/modules
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR&apos;
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH&apos; environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH&apos; environment variable
+     during linking
+   - use the `-Wl,--rpath -Wl,LIBDIR&apos; linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf&apos;
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+
+Build complete.
+Don&apos;t forget to run &apos;make test&apos;.
+
+Installing shared extensions:     /usr/local/lib/php/extensions/no-debug-non-zts-20180731/
+find . -name \*.gcno -o -name \*.gcda | xargs rm -f
+find . -name \*.lo -o -name \*.o | xargs rm -f
+find . -name \*.la -o -name \*.a | xargs rm -f
+find . -name \*.so | xargs rm -f
+find . -name .libs -a -type d|xargs rm -rf
+rm -f libphp.la      modules/* libs/*
+Removing intermediate container 8dd6cb6fa094
+ ---&gt; fcb08b99f3d8
+Step 14/27 : ARG uid
+ ---&gt; Running in a47c7a0206c1
+Removing intermediate container a47c7a0206c1
+ ---&gt; bcb8abf9e42a
+Step 15/27 : RUN useradd -o -u ${uid} -g www-data -m -s /bin/bash www
+ ---&gt; Running in 6b21885891d4
+Removing intermediate container 6b21885891d4
+ ---&gt; a41c3ccb919b
+Step 16/27 : COPY --chown=www-data:www-data . /var/www/html
+ ---&gt; f6731da1a0a4
+Step 17/27 : COPY --chown=www-data:www-data --from=vendor /app/vendor /var/www/html/vendor/
+ ---&gt; 313457d181b6
+Step 18/27 : COPY --chown=www-data:www-data --from=frontend /app/public/js /var/www/html/public/js/
+ ---&gt; f0e245c0e9fb
+Step 19/27 : COPY --chown=www-data:www-data --from=frontend /app/public/css /var/www/html/public/css/
+ ---&gt; 3889d670696a
+Step 20/27 : COPY --chown=www-data:www-data --from=frontend /app/mix-manifest.json /var/www/html/mix-manifest.json/
+ ---&gt; faa798b94842
+Step 21/27 : RUN chown -R www-data:www-data /var/www/html/storage
+ ---&gt; Running in 8dd0d64f1ee3
+Removing intermediate container 8dd0d64f1ee3
+ ---&gt; 0faa35229796
+Step 22/27 : ENV APACHE_DOCUMENT_ROOT /var/www/html/public
+ ---&gt; Running in 7ffec7e07e3e
+Removing intermediate container 7ffec7e07e3e
+ ---&gt; 83c7689c0d6e
+Step 23/27 : RUN sed -ri -e &apos;s!/var/www/html!${APACHE_DOCUMENT_ROOT}!g&apos; /etc/apache2/sites-available/*.conf
+ ---&gt; Running in 412d04e5e58a
+Removing intermediate container 412d04e5e58a
+ ---&gt; 9137d555a86e
+Step 24/27 : RUN sed -ri -e &apos;s!/var/www/!${APACHE_DOCUMENT_ROOT}!g&apos; /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+ ---&gt; Running in b9e6a64fc38a
+Removing intermediate container b9e6a64fc38a
+ ---&gt; ed44cc05cc88
+Step 25/27 : RUN sed -s -i -e &quot;s/80/8000/&quot; /etc/apache2/ports.conf /etc/apache2/sites-available/*.conf
+ ---&gt; Running in 2dc6f2d49e07
+Removing intermediate container 2dc6f2d49e07
+ ---&gt; 6d5b84a419eb
+Step 26/27 : RUN a2enmod rewrite
+ ---&gt; Running in a855e9cc6653
+Enabling module rewrite.
+To activate the new configuration, you need to run:
+  service apache2 restart
+Removing intermediate container a855e9cc6653
+ ---&gt; ade0f20455de
+Step 27/27 : USER www
+ ---&gt; Running in 6fd9aac33d6a
+Removing intermediate container 6fd9aac33d6a
+ ---&gt; ed6c6c2f735c
+
+Successfully built ed6c6c2f735c
+Successfully tagged myapp_myapp:latest
+<font color="#C4A000">WARNING</font>: Image for service myapp was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
+Creating myapp_mysql-db_1 ... 
+Creating myapp_mysql-db_1 ... <font color="#4E9A06">done</font>
+Creating myapp_myapp_1 ... 
+Creating myapp_myapp_1 ... <font color="#4E9A06">done</font>
+Attaching to myapp_mysql-db_1, myapp_myapp_1
+<font color="#C4A000">myapp_1     |</font> AH00558: apache2: Could not reliably determine the server&apos;s fully qualified domain name, using 172.19.0.3. Set the &apos;ServerName&apos; directive globally to suppress this message
+<font color="#C4A000">myapp_1     |</font> AH00558: apache2: Could not reliably determine the server&apos;s fully qualified domain name, using 172.19.0.3. Set the &apos;ServerName&apos; directive globally to suppress this message
+<font color="#C4A000">myapp_1     |</font> [Sun May 17 20:29:58.626859 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.3.10 configured -- resuming normal operations
+<font color="#C4A000">myapp_1     |</font> [Sun May 17 20:29:58.626921 2020] [core:notice] [pid 1] AH00094: Command line: &apos;apache2 -D FOREGROUND&apos;
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17 20:29:51+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.20-1debian10 started.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17 20:29:56+00:00 [Note] [Entrypoint]: Switching to dedicated user &apos;mysql&apos;
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17 20:29:56+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.20-1debian10 started.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17 20:29:56+00:00 [Note] [Entrypoint]: Initializing database files
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:29:56.689320Z 0 [Warning] [MY-010139] [Server] Changed limits: max_open_files: 1024 (requested 8161)
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:29:56.689325Z 0 [Warning] [MY-010142] [Server] Changed limits: table_open_cache: 431 (requested 4000)
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:29:56.689700Z 0 [Warning] [MY-011070] [Server] &apos;Disabling symbolic links using --skip-symbolic-links (or equivalent) is the default. Consider not using this option as it&apos; is deprecated and will be removed in a future release.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:29:56.689802Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.0.20) initializing of server in progress as process 43
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:29:56.742783Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:30:05.475752Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:30:20.833952Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17 20:31:02+00:00 [Note] [Entrypoint]: Database files initialized
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17 20:31:02+00:00 [Note] [Entrypoint]: Starting temporary server
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:02.570515Z 0 [Warning] [MY-010139] [Server] Changed limits: max_open_files: 1024 (requested 8161)
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:02.570521Z 0 [Warning] [MY-010142] [Server] Changed limits: table_open_cache: 431 (requested 4000)
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:02.797314Z 0 [Warning] [MY-011070] [Server] &apos;Disabling symbolic links using --skip-symbolic-links (or equivalent) is the default. Consider not using this option as it&apos; is deprecated and will be removed in a future release.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:02.797435Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.20) starting as process 90
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:02.901293Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:04.093794Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:04.341578Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: &apos;/var/run/mysqld/mysqlx.sock&apos;
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:04.801562Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:04.834037Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location &apos;/var/run/mysqld&apos; in the path is accessible to all OS users. Consider choosing a different directory.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:04.862445Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: &apos;8.0.20&apos;  socket: &apos;/var/run/mysqld/mysqld.sock&apos;  port: 0  MySQL Community Server - GPL.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17 20:31:04+00:00 [Note] [Entrypoint]: Temporary server started.
+<font color="#06989A">mysql-db_1  |</font> Warning: Unable to load &apos;/usr/share/zoneinfo/iso3166.tab&apos; as time zone. Skipping it.
+<font color="#06989A">mysql-db_1  |</font> Warning: Unable to load &apos;/usr/share/zoneinfo/leap-seconds.list&apos; as time zone. Skipping it.
+<font color="#06989A">mysql-db_1  |</font> Warning: Unable to load &apos;/usr/share/zoneinfo/zone.tab&apos; as time zone. Skipping it.
+<font color="#06989A">mysql-db_1  |</font> Warning: Unable to load &apos;/usr/share/zoneinfo/zone1970.tab&apos; as time zone. Skipping it.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17 20:31:13+00:00 [Note] [Entrypoint]: Creating database laravel
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17 20:31:13+00:00 [Note] [Entrypoint]: Creating user laravel
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17 20:31:13+00:00 [Note] [Entrypoint]: Giving user laravel access to schema laravel
+<font color="#06989A">mysql-db_1  |</font> 
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17 20:31:14+00:00 [Note] [Entrypoint]: Stopping temporary server
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:14.270860Z 14 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.0.20).
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:25.592840Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.20)  MySQL Community Server - GPL.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17 20:31:26+00:00 [Note] [Entrypoint]: Temporary server stopped
+<font color="#06989A">mysql-db_1  |</font> 
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17 20:31:26+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+<font color="#06989A">mysql-db_1  |</font> 
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:26.284057Z 0 [Warning] [MY-010139] [Server] Changed limits: max_open_files: 1024 (requested 8161)
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:26.284064Z 0 [Warning] [MY-010142] [Server] Changed limits: table_open_cache: 431 (requested 4000)
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:26.500792Z 0 [Warning] [MY-011070] [Server] &apos;Disabling symbolic links using --skip-symbolic-links (or equivalent) is the default. Consider not using this option as it&apos; is deprecated and will be removed in a future release.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:26.500894Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.20) starting as process 1
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:26.528048Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:28.303471Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:28.515331Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: &apos;/var/run/mysqld/mysqlx.sock&apos; bind-address: &apos;::&apos; port: 33060
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:28.884428Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:28.928004Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location &apos;/var/run/mysqld&apos; in the path is accessible to all OS users. Consider choosing a different directory.
+<font color="#06989A">mysql-db_1  |</font> 2020-05-17T20:31:28.947529Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: &apos;8.0.20&apos;  socket: &apos;/var/run/mysqld/mysqld.sock&apos;  port: 3306  MySQL Community Server - GPL.
+<font color="#C4A000">myapp_1     |</font> 172.19.0.1 - - [17/May/2020:21:31:14 +0000] &quot;GET /robots.txt HTTP/1.1&quot; 200 308 &quot;-&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36&quot;
+<font color="#C4A000">myapp_1     |</font> 172.19.0.1 - - [17/May/2020:21:31:20 +0000] &quot;GET /_ignition/health-check HTTP/1.1&quot; 200 285 &quot;http://0.0.0.0:8000/&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36&quot;
+<font color="#C4A000">myapp_1     |</font> 172.19.0.1 - - [17/May/2020:21:31:14 +0000] &quot;GET / HTTP/1.1&quot; 500 1134378 &quot;-&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36&quot;
+<font color="#C4A000">myapp_1     |</font> 172.19.0.1 - - [17/May/2020:21:31:21 +0000] &quot;GET /_ignition/health-check HTTP/1.1&quot; 200 284 &quot;http://0.0.0.0:8000/&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36&quot;
+<font color="#C4A000">myapp_1     |</font> 172.19.0.1 - - [17/May/2020:21:31:21 +0000] &quot;GET /favicon.ico HTTP/1.1&quot; 200 295 &quot;http://0.0.0.0:8000/&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36&quot;
+<font color="#C4A000">myapp_1     |</font> 172.19.0.1 - - [17/May/2020:21:39:55 +0000] &quot;POST /_ignition/execute-solution HTTP/1.1&quot; 200 263 &quot;http://0.0.0.0:8000/&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36&quot;
+<font color="#C4A000">myapp_1     |</font> 172.19.0.1 - - [17/May/2020:21:39:59 +0000] &quot;GET / HTTP/1.1&quot; 200 1783 &quot;http://0.0.0.0:8000/&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36&quot;
+<font color="#C4A000">myapp_1     |</font> 172.19.0.1 - - [17/May/2020:21:40:51 +0000] &quot;-&quot; 408 0 &quot;-&quot; &quot;-&quot;
+<font color="#C4A000">myapp_1     |</font> 172.19.0.1 - - [17/May/2020:21:41:28 +0000] &quot;GET / HTTP/1.1&quot; 200 1784 &quot;http://0.0.0.0:8000/&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36&quot;
+<font color="#C4A000">myapp_1     |</font> 172.19.0.1 - - [17/May/2020:21:41:29 +0000] &quot;GET /favicon.ico HTTP/1.1&quot; 200 295 &quot;http://0.0.0.0:8000/&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36&quot;
+<font color="#C4A000">myapp_1     |</font> 172.19.0.1 - - [17/May/2020:21:43:26 +0000] &quot;GET /login HTTP/1.1&quot; 404 1788 &quot;-&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36&quot;
+<font color="#C4A000">myapp_1     |</font> 172.19.0.1 - - [17/May/2020:21:44:17 +0000] &quot;-&quot; 408 0 &quot;-&quot; &quot;-&quot;
+<font color="#C4A000">myapp_1     |</font> 172.19.0.1 - - [17/May/2020:21:44:47 +0000] &quot;GET /robots.txt HTTP/1.1&quot; 200 308 &quot;-&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36&quot;
+<font color="#C4A000">myapp_1     |</font> 172.19.0.1 - - [17/May/2020:21:44:47 +0000] &quot;GET / HTTP/1.1&quot; 200 1784 &quot;-&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36&quot;
+<font color="#C4A000">myapp_1     |</font> 172.19.0.1 - - [17/May/2020:21:44:48 +0000] &quot;GET /favicon.ico HTTP/1.1&quot; 200 295 &quot;http://localhost:8000/&quot; &quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36&quot;
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping myapp_myapp_1    ... <font color="#4E9A06">done</font>
+Stopping myapp_mysql-db_1 ... <font color="#4E9A06">done</font>
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ 
+</pre>

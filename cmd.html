@@ -1,0 +1,654 @@
+<pre>Creating app ... <font color="#CC0000">error</font>
+
+ERROR: for app  Cannot start service app: error while creating mount source path &apos;/var/www/html/myapp/php/local.ini&apos;: mkdir /var/www: read-only file system
+
+ERROR: for webserver  Cannot start service webserver: driver failed programming external connectivity on endpoint webserver (a994d11c40e1879bc5d63c26ca4154eef65d4e23898b739d77f7b75bb1e72361): Error starting userland proxy: listen tcp 0.0.0.0:80: bind: address already in use
+
+ERROR: for db  Cannot start service db: driver failed programming external connectivity on endpoint db (d5524aab05b4905d88d440f6ab50db127bd23b646fc3e75597e9533b30e50a9c): Error starting userland proxy: listen tcp 0.0.0.0:3306: bind: address already in use
+
+ERROR: for app  Cannot start service app: error while creating mount source path &apos;/var/www/html/myapp/php/local.ini&apos;: mkdir /var/www: read-only file system
+<font color="#CC0000">ERROR</font>: Encountered errors while bringing up the project.
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>/var/www/html/myapp</b></font>$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>/var/www/html/myapp</b></font>$ cd ~
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~</b></font>$ clear
+
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~</b></font>$ git clone https://github.com/laravel/laravel.git myapp/
+fatal: destination path &apos;myapp&apos; already exists and is not an empty directory.
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~</b></font>$ cd Desktop
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop</b></font>$ git clone https://github.com/laravel/laravel.git myapp/
+Cloning into &apos;myapp&apos;...
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 31422 (delta 0), reused 0 (delta 0), pack-reused 31418
+Receiving objects: 100% (31422/31422), 9.78 MiB | 356.00 KiB/s, done.
+Resolving deltas: 100% (18578/18578), done.
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop</b></font>$ cd myapp
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ ls -la
+total 136
+drwxr-xr-x 12 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>.</b></font>
+drwxr-xr-x  5 forsan forsan  4096 May 15 18:02 <font color="#729FCF"><b>..</b></font>
+drwxr-xr-x  6 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>app</b></font>
+-rwxr-xr-x  1 forsan forsan  1686 May 15 18:03 <font color="#8AE234"><b>artisan</b></font>
+drwxr-xr-x  3 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>bootstrap</b></font>
+-rw-r--r--  1 forsan forsan 35856 May 15 18:03 CHANGELOG.md
+-rw-r--r--  1 forsan forsan  1586 May 15 18:03 composer.json
+drwxr-xr-x  2 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>config</b></font>
+drwxr-xr-x  5 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>database</b></font>
+-rw-r--r--  1 forsan forsan   220 May 15 18:03 .editorconfig
+-rw-r--r--  1 forsan forsan   778 May 15 18:03 .env.example
+drwxr-xr-x  8 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>.git</b></font>
+-rw-r--r--  1 forsan forsan   111 May 15 18:03 .gitattributes
+-rw-r--r--  1 forsan forsan   163 May 15 18:03 .gitignore
+-rw-r--r--  1 forsan forsan  1034 May 15 18:03 package.json
+-rw-r--r--  1 forsan forsan  1197 May 15 18:03 phpunit.xml
+drwxr-xr-x  2 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>public</b></font>
+-rw-r--r--  1 forsan forsan  4465 May 15 18:03 README.md
+drwxr-xr-x  6 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>resources</b></font>
+drwxr-xr-x  2 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>routes</b></font>
+-rw-r--r--  1 forsan forsan   563 May 15 18:03 server.php
+drwxr-xr-x  5 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>storage</b></font>
+-rw-r--r--  1 forsan forsan   174 May 15 18:03 .styleci.yml
+drwxr-xr-x  4 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>tests</b></font>
+-rw-r--r--  1 forsan forsan   538 May 15 18:03 webpack.mix.js
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ cp .env.example .env
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ ls -la
+total 140
+drwxr-xr-x 12 forsan forsan  4096 May 15 18:04 <font color="#729FCF"><b>.</b></font>
+drwxr-xr-x  5 forsan forsan  4096 May 15 18:02 <font color="#729FCF"><b>..</b></font>
+drwxr-xr-x  6 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>app</b></font>
+-rwxr-xr-x  1 forsan forsan  1686 May 15 18:03 <font color="#8AE234"><b>artisan</b></font>
+drwxr-xr-x  3 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>bootstrap</b></font>
+-rw-r--r--  1 forsan forsan 35856 May 15 18:03 CHANGELOG.md
+-rw-r--r--  1 forsan forsan  1586 May 15 18:03 composer.json
+drwxr-xr-x  2 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>config</b></font>
+drwxr-xr-x  5 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>database</b></font>
+-rw-r--r--  1 forsan forsan   220 May 15 18:03 .editorconfig
+-rw-r--r--  1 forsan forsan   778 May 15 18:04 .env
+-rw-r--r--  1 forsan forsan   778 May 15 18:03 .env.example
+drwxr-xr-x  8 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>.git</b></font>
+-rw-r--r--  1 forsan forsan   111 May 15 18:03 .gitattributes
+-rw-r--r--  1 forsan forsan   163 May 15 18:03 .gitignore
+-rw-r--r--  1 forsan forsan  1034 May 15 18:03 package.json
+-rw-r--r--  1 forsan forsan  1197 May 15 18:03 phpunit.xml
+drwxr-xr-x  2 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>public</b></font>
+-rw-r--r--  1 forsan forsan  4465 May 15 18:03 README.md
+drwxr-xr-x  6 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>resources</b></font>
+drwxr-xr-x  2 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>routes</b></font>
+-rw-r--r--  1 forsan forsan   563 May 15 18:03 server.php
+drwxr-xr-x  5 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>storage</b></font>
+-rw-r--r--  1 forsan forsan   174 May 15 18:03 .styleci.yml
+drwxr-xr-x  4 forsan forsan  4096 May 15 18:03 <font color="#729FCF"><b>tests</b></font>
+-rw-r--r--  1 forsan forsan   538 May 15 18:03 webpack.mix.js
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo nano .env
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo nano Dockerfile
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo nano docker-compose.yml
+[sudo] password for forsan: 
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ docker-compose up
+<font color="#CC0000">ERROR</font>: Couldn&apos;t connect to Docker daemon - you might need to run `docker-machine start default`.
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo nano docker-compose.yml
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ docker-compose up
+<font color="#CC0000">ERROR</font>: Couldn&apos;t connect to Docker daemon - you might need to run `docker-machine start default`.
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ docker-compose up
+<font color="#CC0000">ERROR</font>: Couldn&apos;t connect to Docker daemon - you might need to run `docker-machine start default`.
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ docker-machine start default
+Docker machine &quot;default&quot; does not exist. Use &quot;docker-machine ls&quot; to list machines. Use &quot;docker-machine create&quot; to add a new one.
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ docker-machine create
+Usage: docker-machine create [OPTIONS] [arg...]
+
+Create a machine
+
+Description:
+   Run &apos;docker-machine create --driver name --help&apos; to include the create flags for that driver in the help text.
+
+Options:
+   
+   --driver, -d &quot;virtualbox&quot;										Driver to create machine with. [$MACHINE_DRIVER]
+   --engine-env [--engine-env option --engine-env option]						Specify environment variables to set in the engine
+   --engine-insecure-registry [--engine-insecure-registry option --engine-insecure-registry option]	Specify insecure registries to allow with the created engine
+   --engine-install-url &quot;https://get.docker.com&quot;							Custom URL to use for engine installation [$MACHINE_DOCKER_INSTALL_URL]
+   --engine-label [--engine-label option --engine-label option]						Specify labels for the created engine
+   --engine-opt [--engine-opt option --engine-opt option]						Specify arbitrary flags to include with the created engine in the form flag=value
+   --engine-registry-mirror [--engine-registry-mirror option --engine-registry-mirror option]		Specify registry mirrors to use [$ENGINE_REGISTRY_MIRROR]
+   --engine-storage-driver 										Specify a storage driver to use with the engine
+   --swarm												Configure Machine to join a Swarm cluster
+   --swarm-addr 											addr to advertise for Swarm (default: detect and use the machine IP)
+   --swarm-discovery 											Discovery service to use with Swarm
+   --swarm-experimental											Enable Swarm experimental features
+   --swarm-host &quot;tcp://0.0.0.0:3376&quot;									ip/socket to listen on for Swarm master
+   --swarm-image &quot;swarm:latest&quot;										Specify Docker image to use for Swarm [$MACHINE_SWARM_IMAGE]
+   --swarm-join-opt [--swarm-join-opt option --swarm-join-opt option]					Define arbitrary flags for Swarm join
+   --swarm-master											Configure Machine to be a Swarm master
+   --swarm-opt [--swarm-opt option --swarm-opt option]							Define arbitrary flags for Swarm master
+   --swarm-strategy &quot;spread&quot;										Define a default scheduling strategy for Swarm
+   --tls-san [--tls-san option --tls-san option]							Support extra SANs for TLS certs
+   --virtualbox-boot2docker-url 									The URL of the boot2docker image. Defaults to the latest available version [$VIRTUALBOX_BOOT2DOCKER_URL]
+   --virtualbox-cpu-count &quot;1&quot;										number of CPUs for the machine (-1 to use the number of CPUs available) [$VIRTUALBOX_CPU_COUNT]
+   --virtualbox-disk-size &quot;20000&quot;									Size of disk for host in MB [$VIRTUALBOX_DISK_SIZE]
+   --virtualbox-host-dns-resolver									Use the host DNS resolver [$VIRTUALBOX_HOST_DNS_RESOLVER]
+   --virtualbox-hostonly-cidr &quot;192.168.99.1/24&quot;								Specify the Host Only CIDR [$VIRTUALBOX_HOSTONLY_CIDR]
+   --virtualbox-hostonly-nicpromisc &quot;deny&quot;								Specify the Host Only Network Adapter Promiscuous Mode [$VIRTUALBOX_HOSTONLY_NIC_PROMISC]
+   --virtualbox-hostonly-nictype &quot;82540EM&quot;								Specify the Host Only Network Adapter Type [$VIRTUALBOX_HOSTONLY_NIC_TYPE]
+   --virtualbox-hostonly-no-dhcp									Disable the Host Only DHCP Server [$VIRTUALBOX_HOSTONLY_NO_DHCP]
+   --virtualbox-import-boot2docker-vm 									The name of a Boot2Docker VM to import [$VIRTUALBOX_BOOT2DOCKER_IMPORT_VM]
+   --virtualbox-memory &quot;1024&quot;										Size of memory for host in MB [$VIRTUALBOX_MEMORY_SIZE]
+   --virtualbox-nat-nictype &quot;82540EM&quot;									Specify the Network Adapter Type [$VIRTUALBOX_NAT_NICTYPE]
+   --virtualbox-no-dns-proxy										Disable proxying all DNS requests to the host [$VIRTUALBOX_NO_DNS_PROXY]
+   --virtualbox-no-share										Disable the mount of your home directory [$VIRTUALBOX_NO_SHARE]
+   --virtualbox-no-vtx-check										Disable checking for the availability of hardware virtualization before the vm is started [$VIRTUALBOX_NO_VTX_CHECK]
+   --virtualbox-share-folder 										Mount the specified directory instead of the default home location. Format: dir:name [$VIRTUALBOX_SHARE_FOLDER]
+   --virtualbox-ui-type &quot;headless&quot;									Specify the UI Type: (gui|sdl|headless|separate) [$VIRTUALBOX_UI_TYPE]
+Error: No machine name specified
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ docker-machine create بخقسشى
+Error creating machine: Invalid hostname specified. Allowed hostname chars are: 0-9a-zA-Z . -
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ docker-machine create forsan
+Creating CA: /home/forsan/snap/docker/423/.docker/machine/certs/ca.pem
+Creating client certificate: /home/forsan/snap/docker/423/.docker/machine/certs/cert.pem
+Running pre-create checks...
+Error with pre-create check: &quot;VBoxManage not found. Make sure VirtualBox is installed and VBoxManage is in the path&quot;
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ ^C
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ docker-compose up
+<font color="#CC0000">ERROR</font>: Couldn&apos;t connect to Docker daemon - you might need to run `docker-machine start default`.
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo docker-compose up
+[sudo] password for forsan: 
+Creating network &quot;myapp_default&quot; with the default driver
+Pulling mysql-db (mysql:8.0)...
+8.0: Pulling from library/mysql
+afb6ec6fdc1c: Pull complete
+0bdc5971ba40: Pull complete
+97ae94a2c729: Pull complete
+f777521d340e: Pull complete
+1393ff7fc871: Pull complete
+a499b89994d9: Pull complete
+7ebe8eefbafe: Pull complete
+597069368ef1: Pull complete
+ce39a5501878: Pull complete
+7d545bca14bf: Pull complete
+0f5f78cccacb: Pull complete
+623a5dae2b42: Pull complete
+Digest: sha256:beba993cc5720da07129078d13441745c02560a2a0181071143e599ad9c497fa
+Status: Downloaded newer image for mysql:8.0
+Building laravel-app
+<font color="#CC0000">ERROR</font>: Dockerfile parse error line 11: unknown instruction: WORKING
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo nano Dockerfile
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo docker-compose up
+Building laravel-app
+Step 1/27 : From composer:1.9 as vendor
+1.9: Pulling from library/composer
+cbdbe7a5bc2a: Already exists
+1bc86e4cff5f: Already exists
+7be142bd33f5: Already exists
+8132c9e52be3: Already exists
+a137357f3ccd: Pull complete
+d20a867f685c: Pull complete
+5cb708ec8e9a: Pull complete
+0d70b58097d6: Pull complete
+2ecb47295b41: Pull complete
+28755be0ac35: Pull complete
+6b543ba1d100: Pull complete
+912b5845761b: Pull complete
+aa43ce50fcf3: Pull complete
+813e840b96fa: Pull complete
+8bbc1a013f7a: Pull complete
+Digest: sha256:1b953c765874f8ecbaa8074a9f2a1fe52475a99198e82c74fdd23074c8fafd81
+Status: Downloaded newer image for composer:1.9
+ ---&gt; a990eadf5968
+Step 2/27 : COPY database/ database/
+ ---&gt; 884950a55a86
+Step 3/27 : COPY composer.json composer.json
+ ---&gt; 37ccc311c291
+Step 4/27 : COPY composer.lock composer.lock
+<font color="#CC0000">ERROR</font>: Service &apos;laravel-app&apos; failed to build: COPY failed: stat /var/snap/docker/common/var-lib-docker/tmp/docker-builder953712494/composer.lock: no such file or directory
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ code .
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo nano docker-compose.yml
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo docker-compose up
+Building myapp
+Step 1/27 : From composer:1.9 as vendor
+ ---&gt; a990eadf5968
+Step 2/27 : COPY database/ database/
+ ---&gt; Using cache
+ ---&gt; 884950a55a86
+Step 3/27 : COPY composer.json composer.json
+ ---&gt; Using cache
+ ---&gt; 37ccc311c291
+Step 4/27 : COPY composer.lock composer.lock
+<font color="#CC0000">ERROR</font>: Service &apos;myapp&apos; failed to build: COPY failed: stat /var/snap/docker/common/var-lib-docker/tmp/docker-builder349665052/composer.lock: no such file or directory
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo nano docker-compose.yml
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo docker-compose up
+Building myapp
+Step 1/27 : From composer:1.9 as vendor
+ ---&gt; a990eadf5968
+Step 2/27 : COPY database/ database/
+ ---&gt; Using cache
+ ---&gt; 884950a55a86
+Step 3/27 : COPY composer.json composer.json
+ ---&gt; Using cache
+ ---&gt; 37ccc311c291
+Step 4/27 : COPY composer.lock composer.lock
+<font color="#CC0000">ERROR</font>: Service &apos;myapp&apos; failed to build: COPY failed: stat /var/snap/docker/common/var-lib-docker/tmp/docker-builder870934987/composer.lock: no such file or directory
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo docker-compose up
+Building myapp
+Step 1/27 : From composer:1.9 as vendor
+ ---&gt; a990eadf5968
+Step 2/27 : COPY database/ database/
+ ---&gt; Using cache
+ ---&gt; 884950a55a86
+Step 3/27 : COPY composer.json composer.json
+ ---&gt; Using cache
+ ---&gt; 37ccc311c291
+Step 4/27 : COPY composer.lock composer.lock
+<font color="#CC0000">ERROR</font>: Service &apos;myapp&apos; failed to build: COPY failed: stat /var/snap/docker/common/var-lib-docker/tmp/docker-builder876819630/composer.lock: no such file or directory
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo docker-compose ps
+Name   Command   State   Ports
+------------------------------
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo docker run --rm -v $(pwd):/app composer install
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 92 installs, 0 updates, 0 removals
+  - Installing voku/portable-ascii (1.4.10): Downloading (100%)         
+  - Installing symfony/polyfill-ctype (v1.17.0): Downloading (100%)         
+  - Installing phpoption/phpoption (1.7.3): Downloading (100%)         
+  - Installing vlucas/phpdotenv (v4.1.5): Downloading (100%)         
+  - Installing symfony/css-selector (v5.0.8): Downloading (100%)         
+  - Installing tijsverkoyen/css-to-inline-styles (2.2.2): Downloading (100%)         
+  - Installing symfony/polyfill-mbstring (v1.17.0): Downloading (100%)         
+  - Installing symfony/var-dumper (v5.0.8): Downloading (100%)         
+  - Installing symfony/routing (v5.0.8): Downloading (100%)         
+  - Installing symfony/process (v5.0.8): Downloading (100%)         
+  - Installing symfony/polyfill-php72 (v1.17.0): Downloading (100%)         
+  - Installing symfony/polyfill-intl-idn (v1.17.0): Downloading (100%)         
+  - Installing symfony/mime (v5.0.8): Downloading (100%)         
+  - Installing psr/log (1.1.3): Downloading (100%)         
+  - Installing symfony/polyfill-php73 (v1.17.0): Downloading (100%)         
+  - Installing symfony/http-foundation (v5.0.8): Downloading (100%)         
+  - Installing psr/event-dispatcher (1.0.0): Downloading (100%)         
+  - Installing symfony/event-dispatcher-contracts (v2.0.1): Downloading (100%)         
+  - Installing symfony/event-dispatcher (v5.0.8): Downloading (100%)         
+  - Installing symfony/error-handler (v5.0.8): Downloading (100%)         
+  - Installing symfony/http-kernel (v5.0.8): Downloading (100%)         
+  - Installing symfony/finder (v5.0.8): Downloading (100%)         
+  - Installing psr/container (1.0.0): Downloading (100%)         
+  - Installing symfony/service-contracts (v2.0.1): Downloading (100%)         
+  - Installing symfony/console (v5.0.8): Downloading (100%)         
+  - Installing symfony/polyfill-iconv (v1.17.0): Downloading (100%)         
+  - Installing doctrine/lexer (1.2.0): Downloading (100%)         
+  - Installing egulias/email-validator (2.1.17): Downloading (100%)         
+  - Installing swiftmailer/swiftmailer (v6.2.3): Downloading (100%)         
+  - Installing ramsey/collection (1.0.1): Downloading (100%)         
+  - Installing brick/math (0.8.15): Downloading (100%)         
+  - Installing ramsey/uuid (4.0.1): Downloading (100%)         
+  - Installing psr/simple-cache (1.0.1): Downloading (100%)         
+  - Installing opis/closure (3.5.1): Downloading (100%)         
+  - Installing symfony/translation-contracts (v2.0.1): Downloading (100%)         
+  - Installing symfony/translation (v5.0.8): Downloading (100%)         
+  - Installing nesbot/carbon (2.34.0): Downloading (100%)         
+  - Installing monolog/monolog (2.0.2): Downloading (100%)         
+  - Installing league/flysystem (1.0.68): Downloading (100%)         
+  - Installing league/commonmark (1.4.3): Downloading (100%)         
+  - Installing dragonmantank/cron-expression (v2.3.0): Downloading (100%)         
+  - Installing doctrine/inflector (2.0.1): Downloading (100%)         
+  - Installing laravel/framework (v7.11.0): Downloading (100%)         
+  - Installing fideloper/proxy (4.3.0): Downloading (100%)         
+  - Installing asm89/stack-cors (1.3.0): Downloading (100%)         
+  - Installing fruitcake/laravel-cors (v1.0.6): Downloading (100%)         
+  - Installing ralouphie/getallheaders (3.0.3): Downloading (100%)         
+  - Installing psr/http-message (1.0.1): Downloading (100%)         
+  - Installing guzzlehttp/psr7 (1.6.1): Downloading (100%)         
+  - Installing guzzlehttp/promises (v1.3.1): Downloading (100%)         
+  - Installing guzzlehttp/guzzle (6.5.3): Downloading (100%)         
+  - Installing dnoegel/php-xdg-base-dir (v0.1.1): Downloading (100%)         
+  - Installing nikic/php-parser (v4.4.0): Downloading (100%)         
+  - Installing psy/psysh (v0.10.4): Downloading (100%)         
+  - Installing laravel/tinker (v2.4.0): Downloading (100%)         
+  - Installing scrivo/highlight.php (v9.18.1.1): Downloading (100%)         
+  - Installing filp/whoops (2.7.2): Downloading (100%)         
+  - Installing facade/ignition-contracts (1.0.0): Downloading (100%)         
+  - Installing facade/flare-client-php (1.3.2): Downloading (100%)         
+  - Installing facade/ignition (2.0.2): Downloading (100%)         
+  - Installing fzaninotto/faker (v1.9.1): Downloading (100%)         
+  - Installing hamcrest/hamcrest-php (v2.0.0): Downloading (100%)         
+  - Installing mockery/mockery (1.3.1): Downloading (100%)         
+  - Installing nunomaduro/collision (v4.2.0): Downloading (100%)         
+  - Installing sebastian/version (2.0.1): Downloading (100%)         
+  - Installing sebastian/type (1.1.3): Downloading (100%)         
+  - Installing sebastian/resource-operations (2.0.1): Downloading (100%)         
+  - Installing sebastian/recursion-context (3.0.0): Downloading (100%)         
+  - Installing sebastian/object-reflector (1.1.1): Downloading (100%)         
+  - Installing sebastian/object-enumerator (3.0.3): Downloading (100%)         
+  - Installing sebastian/global-state (3.0.0): Downloading (100%)         
+  - Installing sebastian/exporter (3.1.2): Downloading (100%)         
+  - Installing sebastian/environment (4.2.3): Downloading (100%)         
+  - Installing sebastian/diff (3.0.2): Downloading (100%)         
+  - Installing sebastian/comparator (3.0.2): Downloading (100%)         
+  - Installing phpunit/php-timer (2.1.2): Downloading (100%)         
+  - Installing phpunit/php-text-template (1.2.1): Downloading (100%)         
+  - Installing phpunit/php-file-iterator (2.0.2): Downloading (100%)         
+  - Installing theseer/tokenizer (1.1.3): Downloading (100%)         
+  - Installing sebastian/code-unit-reverse-lookup (1.0.1): Downloading (100%)         
+  - Installing phpunit/php-token-stream (3.1.1): Downloading (100%)         
+  - Installing phpunit/php-code-coverage (7.0.10): Downloading (100%)         
+  - Installing doctrine/instantiator (1.3.0): Downloading (100%)         
+  - Installing phpdocumentor/reflection-common (2.1.0): Downloading (100%)         
+  - Installing phpdocumentor/type-resolver (1.1.0): Downloading (100%)         
+  - Installing webmozart/assert (1.8.0): Downloading (100%)         
+  - Installing phpdocumentor/reflection-docblock (5.1.0): Downloading (100%)         
+  - Installing phpspec/prophecy (v1.10.3): Downloading (100%)         
+  - Installing phar-io/version (2.0.1): Downloading (100%)         
+  - Installing phar-io/manifest (1.0.3): Downloading (100%)         
+  - Installing myclabs/deep-copy (1.9.5): Downloading (100%)         
+  - Installing phpunit/phpunit (8.5.4): Downloading (100%)         
+voku/portable-ascii suggests installing ext-intl (Use Intl for transliterator_transliterate() support)
+symfony/var-dumper suggests installing ext-intl (To show region name in time zone dump)
+symfony/routing suggests installing symfony/config (For using the all-in-one router or any loader)
+symfony/routing suggests installing symfony/yaml (For using the YAML loader)
+symfony/routing suggests installing symfony/expression-language (For using expression matching)
+symfony/routing suggests installing doctrine/annotations (For using the annotation loader)
+symfony/polyfill-intl-idn suggests installing ext-intl (For best performance)
+symfony/event-dispatcher suggests installing symfony/dependency-injection
+symfony/http-kernel suggests installing symfony/browser-kit
+symfony/http-kernel suggests installing symfony/config
+symfony/http-kernel suggests installing symfony/dependency-injection
+symfony/service-contracts suggests installing symfony/service-implementation
+symfony/console suggests installing symfony/lock
+egulias/email-validator suggests installing ext-intl (PHP Internationalization Libraries are required to use the SpoofChecking validation)
+swiftmailer/swiftmailer suggests installing ext-intl (Needed to support internationalized email addresses)
+swiftmailer/swiftmailer suggests installing true/punycode (Needed to support internationalized email addresses, if ext-intl is not installed)
+ramsey/uuid suggests installing ext-bcmath (Enables faster math with arbitrary-precision integers using BCMath.)
+ramsey/uuid suggests installing ext-gmp (Enables faster math with arbitrary-precision integers using GMP.)
+ramsey/uuid suggests installing ext-uuid (Enables the use of PeclUuidTimeGenerator and PeclUuidRandomGenerator.)
+ramsey/uuid suggests installing ramsey/uuid-doctrine (Allows the use of Ramsey\Uuid\Uuid as Doctrine field type.)
+ramsey/uuid suggests installing paragonie/random-lib (Provides RandomLib for use with the RandomLibAdapter)
+symfony/translation suggests installing symfony/config
+symfony/translation suggests installing symfony/yaml
+monolog/monolog suggests installing graylog2/gelf-php (Allow sending log messages to a GrayLog2 server)
+monolog/monolog suggests installing doctrine/couchdb (Allow sending log messages to a CouchDB server)
+monolog/monolog suggests installing ruflin/elastica (Allow sending log messages to an Elastic Search server)
+monolog/monolog suggests installing elasticsearch/elasticsearch (Allow sending log messages to an Elasticsearch server via official client)
+monolog/monolog suggests installing php-amqplib/php-amqplib (Allow sending log messages to an AMQP server using php-amqplib)
+monolog/monolog suggests installing ext-amqp (Allow sending log messages to an AMQP server (1.0+ required))
+monolog/monolog suggests installing ext-mongodb (Allow sending log messages to a MongoDB server (via driver))
+monolog/monolog suggests installing mongodb/mongodb (Allow sending log messages to a MongoDB server (via library))
+monolog/monolog suggests installing aws/aws-sdk-php (Allow sending log messages to AWS services like DynamoDB)
+monolog/monolog suggests installing rollbar/rollbar (Allow sending log messages to Rollbar)
+monolog/monolog suggests installing php-console/php-console (Allow sending log messages to Google Chrome)
+league/flysystem suggests installing league/flysystem-eventable-filesystem (Allows you to use EventableFilesystem)
+league/flysystem suggests installing league/flysystem-rackspace (Allows you to use Rackspace Cloud Files)
+league/flysystem suggests installing league/flysystem-azure (Allows you to use Windows Azure Blob storage)
+league/flysystem suggests installing league/flysystem-webdav (Allows you to use WebDAV storage)
+league/flysystem suggests installing league/flysystem-aws-s3-v2 (Allows you to use S3 storage with AWS SDK v2)
+league/flysystem suggests installing league/flysystem-aws-s3-v3 (Allows you to use S3 storage with AWS SDK v3)
+league/flysystem suggests installing spatie/flysystem-dropbox (Allows you to use Dropbox storage)
+league/flysystem suggests installing srmklive/flysystem-dropbox-v2 (Allows you to use Dropbox storage for PHP 5 applications)
+league/flysystem suggests installing league/flysystem-cached-adapter (Flysystem adapter decorator for metadata caching)
+league/flysystem suggests installing league/flysystem-sftp (Allows you to use SFTP server storage via phpseclib)
+league/flysystem suggests installing league/flysystem-ziparchive (Allows you to use ZipArchive adapter)
+laravel/framework suggests installing ext-gd (Required to use Illuminate\Http\Testing\FileFactory::image().)
+laravel/framework suggests installing ext-memcached (Required to use the memcache cache driver.)
+laravel/framework suggests installing ext-pcntl (Required to use all features of the queue worker.)
+laravel/framework suggests installing ext-redis (Required to use the Redis cache and queue drivers (^4.0|^5.0).)
+laravel/framework suggests installing aws/aws-sdk-php (Required to use the SQS queue driver, DynamoDb failed job storage and SES mail driver (^3.0).)
+laravel/framework suggests installing doctrine/dbal (Required to rename columns and drop SQLite columns (^2.6).)
+laravel/framework suggests installing league/flysystem-aws-s3-v3 (Required to use the Flysystem S3 driver (^1.0).)
+laravel/framework suggests installing league/flysystem-cached-adapter (Required to use the Flysystem cache (^1.0).)
+laravel/framework suggests installing league/flysystem-sftp (Required to use the Flysystem SFTP driver (^1.0).)
+laravel/framework suggests installing moontoast/math (Required to use ordered UUIDs (^1.1).)
+laravel/framework suggests installing nyholm/psr7 (Required to use PSR-7 bridging features (^1.2).)
+laravel/framework suggests installing pda/pheanstalk (Required to use the beanstalk queue driver (^4.0).)
+laravel/framework suggests installing pusher/pusher-php-server (Required to use the Pusher broadcast driver (^4.0).)
+laravel/framework suggests installing symfony/cache (Required to PSR-6 cache bridge (^5.0).)
+laravel/framework suggests installing symfony/filesystem (Required to create relative storage directory symbolic links (^5.0).)
+laravel/framework suggests installing symfony/psr-http-message-bridge (Required to use PSR-7 bridging features (^2.0).)
+laravel/framework suggests installing wildbit/swiftmailer-postmark (Required to use Postmark mail driver (^3.0).)
+guzzlehttp/psr7 suggests installing zendframework/zend-httphandlerrunner (Emit PSR-7 responses)
+psy/psysh suggests installing ext-pcntl (Enabling the PCNTL extension makes PsySH a lot happier :))
+psy/psysh suggests installing ext-pdo-sqlite (The doc command requires SQLite to work.)
+psy/psysh suggests installing hoa/console (A pure PHP readline implementation. You&apos;ll want this if your PHP install doesn&apos;t already support readline or libedit.)
+filp/whoops suggests installing whoops/soap (Formats errors as SOAP responses)
+facade/ignition suggests installing laravel/telescope (^3.1)
+sebastian/global-state suggests installing ext-uopz (*)
+phpunit/php-code-coverage suggests installing ext-xdebug (^2.7.2)
+phpunit/phpunit suggests installing phpunit/php-invoker (^2.0.0)
+phpunit/phpunit suggests installing ext-soap (*)
+phpunit/phpunit suggests installing ext-xdebug (*)
+Writing lock file
+Generating optimized autoload files
+&gt; Illuminate\Foundation\ComposerScripts::postAutoloadDump
+&gt; @php artisan package:discover --ansi
+Discovered Package: <font color="#4E9A06">facade/ignition</font>
+Discovered Package: <font color="#4E9A06">fideloper/proxy</font>
+Discovered Package: <font color="#4E9A06">fruitcake/laravel-cors</font>
+Discovered Package: <font color="#4E9A06">laravel/tinker</font>
+Discovered Package: <font color="#4E9A06">nesbot/carbon</font>
+Discovered Package: <font color="#4E9A06">nunomaduro/collision</font>
+<font color="#4E9A06">Package manifest generated successfully.</font>
+31 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo docker-compose up
+Building myapp
+Step 1/27 : From composer:1.9 as vendor
+ ---&gt; a990eadf5968
+Step 2/27 : COPY database/ database/
+ ---&gt; Using cache
+ ---&gt; 884950a55a86
+Step 3/27 : COPY composer.json composer.json
+ ---&gt; Using cache
+ ---&gt; 37ccc311c291
+Step 4/27 : COPY composer.lock composer.lock
+ ---&gt; 3a5974de9194
+Step 5/27 : RUN composer install --no--scripts --ansi --no-interaction
+ ---&gt; Running in 46a65641204b
+
+<span style="background-color:#CC0000"><font color="#D3D7CF">                                                          </font></span>
+<span style="background-color:#CC0000"><font color="#D3D7CF">  [Symfony\Component\Console\Exception\RuntimeException]  </font></span>
+<span style="background-color:#CC0000"><font color="#D3D7CF">  The &quot;--no--scripts&quot; option does not exist.              </font></span>
+<span style="background-color:#CC0000"><font color="#D3D7CF">                                                          </font></span>
+
+<font color="#4E9A06">install [--prefer-source] [--prefer-dist] [--dry-run] [--dev] [--no-dev] [--no-custom-installers] [--no-autoloader] [--no-scripts] [--no-progress] [--no-suggest] [-v|vv|vvv|--verbose] [-o|--optimize-autoloader] [-a|--classmap-authoritative] [--apcu-autoloader] [--ignore-platform-reqs] [--] [&lt;packages&gt;]...</font>
+
+<font color="#CC0000">ERROR</font>: Service &apos;myapp&apos; failed to build: The command &apos;/bin/sh -c composer install --no--scripts --ansi --no-interaction&apos; returned a non-zero code: 1
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo nano docker-compose.yml
+[sudo] password for forsan: 
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo nano Dockerfile
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ sudo docker-compose up
+Building myapp
+Step 1/27 : From composer:1.9 as vendor
+ ---&gt; a990eadf5968
+Step 2/27 : COPY database/ database/
+ ---&gt; Using cache
+ ---&gt; 884950a55a86
+Step 3/27 : COPY composer.json composer.json
+ ---&gt; Using cache
+ ---&gt; 37ccc311c291
+Step 4/27 : COPY composer.lock composer.lock
+ ---&gt; Using cache
+ ---&gt; 3a5974de9194
+Step 5/27 : RUN composer install --no-scripts --ansi --no-interaction
+ ---&gt; Running in 910a6d8b9666
+<font color="#4E9A06">Loading composer repositories with package information</font>
+<font color="#4E9A06">Installing dependencies (including require-dev) from lock file</font>
+<font color="#4E9A06">Package operations: 92 installs, 0 updates, 0 removals</font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">doctrine/inflector</font> (<font color="#C4A000">2.0.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">doctrine/lexer</font> (<font color="#C4A000">1.2.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">dragonmantank/cron-expression</font> (<font color="#C4A000">v2.3.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">voku/portable-ascii</font> (<font color="#C4A000">1.4.10</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/polyfill-ctype</font> (<font color="#C4A000">v1.17.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">phpoption/phpoption</font> (<font color="#C4A000">1.7.3</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">vlucas/phpdotenv</font> (<font color="#C4A000">v4.1.5</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/css-selector</font> (<font color="#C4A000">v5.0.8</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">tijsverkoyen/css-to-inline-styles</font> (<font color="#C4A000">2.2.2</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/polyfill-mbstring</font> (<font color="#C4A000">v1.17.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/var-dumper</font> (<font color="#C4A000">v5.0.8</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/routing</font> (<font color="#C4A000">v5.0.8</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/process</font> (<font color="#C4A000">v5.0.8</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/polyfill-php72</font> (<font color="#C4A000">v1.17.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/polyfill-intl-idn</font> (<font color="#C4A000">v1.17.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/mime</font> (<font color="#C4A000">v5.0.8</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/polyfill-php73</font> (<font color="#C4A000">v1.17.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/http-foundation</font> (<font color="#C4A000">v5.0.8</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">psr/event-dispatcher</font> (<font color="#C4A000">1.0.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/event-dispatcher-contracts</font> (<font color="#C4A000">v2.0.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/event-dispatcher</font> (<font color="#C4A000">v5.0.8</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">psr/log</font> (<font color="#C4A000">1.1.3</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/error-handler</font> (<font color="#C4A000">v5.0.8</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/http-kernel</font> (<font color="#C4A000">v5.0.8</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/finder</font> (<font color="#C4A000">v5.0.8</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">psr/container</font> (<font color="#C4A000">1.0.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/service-contracts</font> (<font color="#C4A000">v2.0.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/console</font> (<font color="#C4A000">v5.0.8</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/polyfill-iconv</font> (<font color="#C4A000">v1.17.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">egulias/email-validator</font> (<font color="#C4A000">2.1.17</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">swiftmailer/swiftmailer</font> (<font color="#C4A000">v6.2.3</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">ramsey/collection</font> (<font color="#C4A000">1.0.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">brick/math</font> (<font color="#C4A000">0.8.15</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">ramsey/uuid</font> (<font color="#C4A000">4.0.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">psr/simple-cache</font> (<font color="#C4A000">1.0.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">opis/closure</font> (<font color="#C4A000">3.5.1</font>): Downloading (<font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/translation-contracts</font> (<font color="#C4A000">v2.0.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">symfony/translation</font> (<font color="#C4A000">v5.0.8</font>): Downloading (<font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">nesbot/carbon</font> (<font color="#C4A000">2.34.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">monolog/monolog</font> (<font color="#C4A000">2.0.2</font>): <font color="#EF2929">Downloading (</font><span style="background-color:#CC0000"><font color="#D3D7CF">failed</font></span>)       
+<font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">league/flysystem</font> (<font color="#C4A000">1.0.68</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">league/commonmark</font> (<font color="#C4A000">1.4.3</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">laravel/framework</font> (<font color="#C4A000">v7.11.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">fideloper/proxy</font> (<font color="#C4A000">4.3.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">asm89/stack-cors</font> (<font color="#C4A000">1.3.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">fruitcake/laravel-cors</font> (<font color="#C4A000">v1.0.6</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">ralouphie/getallheaders</font> (<font color="#C4A000">3.0.3</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">psr/http-message</font> (<font color="#C4A000">1.0.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">guzzlehttp/psr7</font> (<font color="#C4A000">1.6.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">guzzlehttp/promises</font> (<font color="#C4A000">v1.3.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">guzzlehttp/guzzle</font> (<font color="#C4A000">6.5.3</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">nikic/php-parser</font> (<font color="#C4A000">v4.4.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">dnoegel/php-xdg-base-dir</font> (<font color="#C4A000">v0.1.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">psy/psysh</font> (<font color="#C4A000">v0.10.4</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">laravel/tinker</font> (<font color="#C4A000">v2.4.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">scrivo/highlight.php</font> (<font color="#C4A000">v9.18.1.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">filp/whoops</font> (<font color="#C4A000">2.7.2</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">facade/ignition-contracts</font> (<font color="#C4A000">1.0.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">facade/flare-client-php</font> (<font color="#C4A000">1.3.2</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">facade/ignition</font> (<font color="#C4A000">2.0.2</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">fzaninotto/faker</font> (<font color="#C4A000">v1.9.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">hamcrest/hamcrest-php</font> (<font color="#C4A000">v2.0.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">mockery/mockery</font> (<font color="#C4A000">1.3.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">nunomaduro/collision</font> (<font color="#C4A000">v4.2.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">webmozart/assert</font> (<font color="#C4A000">1.8.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">phpdocumentor/reflection-common</font> (<font color="#C4A000">2.1.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">phpdocumentor/type-resolver</font> (<font color="#C4A000">1.1.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">phpdocumentor/reflection-docblock</font> (<font color="#C4A000">5.1.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">phpunit/php-token-stream</font> (<font color="#C4A000">3.1.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">sebastian/version</font> (<font color="#C4A000">2.0.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">sebastian/type</font> (<font color="#C4A000">1.1.3</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">sebastian/resource-operations</font> (<font color="#C4A000">2.0.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">sebastian/recursion-context</font> (<font color="#C4A000">3.0.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">sebastian/object-reflector</font> (<font color="#C4A000">1.1.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">sebastian/object-enumerator</font> (<font color="#C4A000">3.0.3</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">sebastian/global-state</font> (<font color="#C4A000">3.0.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">sebastian/exporter</font> (<font color="#C4A000">3.1.2</font>): Downloading (<font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">sebastian/environment</font> (<font color="#C4A000">4.2.3</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">sebastian/diff</font> (<font color="#C4A000">3.0.2</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">sebastian/comparator</font> (<font color="#C4A000">3.0.2</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">phpunit/php-timer</font> (<font color="#C4A000">2.1.2</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">phpunit/php-text-template</font> (<font color="#C4A000">1.2.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">phpunit/php-file-iterator</font> (<font color="#C4A000">2.0.2</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">theseer/tokenizer</font> (<font color="#C4A000">1.1.3</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">sebastian/code-unit-reverse-lookup</font> (<font color="#C4A000">1.0.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">phpunit/php-code-coverage</font> (<font color="#C4A000">7.0.10</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">doctrine/instantiator</font> (<font color="#C4A000">1.3.0</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">phpspec/prophecy</font> (<font color="#C4A000">v1.10.3</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">phar-io/version</font> (<font color="#C4A000">2.0.1</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">phar-io/manifest</font> (<font color="#C4A000">1.0.3</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">myclabs/deep-copy</font> (<font color="#C4A000">1.9.5</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)<font color="#EF2929">         </font>
+<font color="#EF2929">  - Installing </font><font color="#4E9A06">phpunit/phpunit</font> (<font color="#C4A000">8.5.4</font>): <font color="#EF2929">Downloading (</font><font color="#C4A000">100%</font>)         
+<font color="#EF2929">voku/portable-ascii suggests installing ext-intl (Use Intl for transliterator_transliterate() support)</font>
+<font color="#EF2929">symfony/var-dumper suggests installing ext-intl (To show region name in time zone dump)</font>
+<font color="#EF2929">symfony/routing suggests installing doctrine/annotations (For using the annotation loader)</font>
+<font color="#EF2929">symfony/routing suggests installing symfony/config (For using the all-in-one router or any loader)</font>
+<font color="#EF2929">symfony/routing suggests installing symfony/expression-language (For using expression matching)</font>
+<font color="#EF2929">symfony/routing suggests installing symfony/yaml (For using the YAML loader)</font>
+<font color="#EF2929">symfony/polyfill-intl-idn suggests installing ext-intl (For best performance)</font>
+<font color="#EF2929">symfony/event-dispatcher suggests installing symfony/dependency-injection</font>
+<font color="#EF2929">symfony/http-kernel suggests installing symfony/browser-kit</font>
+<font color="#EF2929">symfony/http-kernel suggests installing symfony/config</font>
+<font color="#EF2929">symfony/http-kernel suggests installing symfony/dependency-injection</font>
+<font color="#EF2929">symfony/service-contracts suggests installing symfony/service-implementation</font>
+<font color="#EF2929">symfony/console suggests installing symfony/lock</font>
+<font color="#EF2929">egulias/email-validator suggests installing ext-intl (PHP Internationalization Libraries are required to use the SpoofChecking validation)</font>
+<font color="#EF2929">swiftmailer/swiftmailer suggests installing ext-intl (Needed to support internationalized email addresses)</font>
+<font color="#EF2929">swiftmailer/swiftmailer suggests installing true/punycode (Needed to support internationalized email addresses, if ext-intl is not installed)</font>
+<font color="#EF2929">ramsey/uuid suggests installing ext-bcmath (Enables faster math with arbitrary-precision integers using BCMath.)</font>
+<font color="#EF2929">ramsey/uuid suggests installing ext-gmp (Enables faster math with arbitrary-precision integers using GMP.)</font>
+<font color="#EF2929">ramsey/uuid suggests installing ext-uuid (Enables the use of PeclUuidTimeGenerator and PeclUuidRandomGenerator.)</font>
+<font color="#EF2929">ramsey/uuid suggests installing paragonie/random-lib (Provides RandomLib for use with the RandomLibAdapter)</font>
+<font color="#EF2929">ramsey/uuid suggests installing ramsey/uuid-doctrine (Allows the use of Ramsey\Uuid\Uuid as Doctrine field type.)</font>
+<font color="#EF2929">symfony/translation suggests installing symfony/config</font>
+<font color="#EF2929">symfony/translation suggests installing symfony/yaml</font>
+<font color="#EF2929">monolog/monolog suggests installing aws/aws-sdk-php (Allow sending log messages to AWS services like DynamoDB)</font>
+<font color="#EF2929">monolog/monolog suggests installing doctrine/couchdb (Allow sending log messages to a CouchDB server)</font>
+<font color="#EF2929">monolog/monolog suggests installing elasticsearch/elasticsearch (Allow sending log messages to an Elasticsearch server via official client)</font>
+<font color="#EF2929">monolog/monolog suggests installing ext-amqp (Allow sending log messages to an AMQP server (1.0+ required))</font>
+<font color="#EF2929">monolog/monolog suggests installing ext-mongodb (Allow sending log messages to a MongoDB server (via driver))</font>
+<font color="#EF2929">monolog/monolog suggests installing graylog2/gelf-php (Allow sending log messages to a GrayLog2 server)</font>
+<font color="#EF2929">monolog/monolog suggests installing mongodb/mongodb (Allow sending log messages to a MongoDB server (via library))</font>
+<font color="#EF2929">monolog/monolog suggests installing php-amqplib/php-amqplib (Allow sending log messages to an AMQP server using php-amqplib)</font>
+<font color="#EF2929">monolog/monolog suggests installing php-console/php-console (Allow sending log messages to Google Chrome)</font>
+<font color="#EF2929">monolog/monolog suggests installing rollbar/rollbar (Allow sending log messages to Rollbar)</font>
+<font color="#EF2929">monolog/monolog suggests installing ruflin/elastica (Allow sending log messages to an Elastic Search server)</font>
+<font color="#EF2929">league/flysystem suggests installing league/flysystem-aws-s3-v2 (Allows you to use S3 storage with AWS SDK v2)</font>
+<font color="#EF2929">league/flysystem suggests installing league/flysystem-aws-s3-v3 (Allows you to use S3 storage with AWS SDK v3)</font>
+<font color="#EF2929">league/flysystem suggests installing league/flysystem-azure (Allows you to use Windows Azure Blob storage)</font>
+<font color="#EF2929">league/flysystem suggests installing league/flysystem-cached-adapter (Flysystem adapter decorator for metadata caching)</font>
+<font color="#EF2929">league/flysystem suggests installing league/flysystem-eventable-filesystem (Allows you to use EventableFilesystem)</font>
+<font color="#EF2929">league/flysystem suggests installing league/flysystem-rackspace (Allows you to use Rackspace Cloud Files)</font>
+<font color="#EF2929">league/flysystem suggests installing league/flysystem-sftp (Allows you to use SFTP server storage via phpseclib)</font>
+<font color="#EF2929">league/flysystem suggests installing league/flysystem-webdav (Allows you to use WebDAV storage)</font>
+<font color="#EF2929">league/flysystem suggests installing league/flysystem-ziparchive (Allows you to use ZipArchive adapter)</font>
+<font color="#EF2929">league/flysystem suggests installing spatie/flysystem-dropbox (Allows you to use Dropbox storage)</font>
+<font color="#EF2929">league/flysystem suggests installing srmklive/flysystem-dropbox-v2 (Allows you to use Dropbox storage for PHP 5 applications)</font>
+<font color="#EF2929">laravel/framework suggests installing aws/aws-sdk-php (Required to use the SQS queue driver, DynamoDb failed job storage and SES mail driver (^3.0).)</font>
+<font color="#EF2929">laravel/framework suggests installing doctrine/dbal (Required to rename columns and drop SQLite columns (^2.6).)</font>
+<font color="#EF2929">laravel/framework suggests installing ext-gd (Required to use Illuminate\Http\Testing\FileFactory::image().)</font>
+<font color="#EF2929">laravel/framework suggests installing ext-memcached (Required to use the memcache cache driver.)</font>
+<font color="#EF2929">laravel/framework suggests installing ext-pcntl (Required to use all features of the queue worker.)</font>
+<font color="#EF2929">laravel/framework suggests installing ext-redis (Required to use the Redis cache and queue drivers (^4.0|^5.0).)</font>
+<font color="#EF2929">laravel/framework suggests installing league/flysystem-aws-s3-v3 (Required to use the Flysystem S3 driver (^1.0).)</font>
+<font color="#EF2929">laravel/framework suggests installing league/flysystem-cached-adapter (Required to use the Flysystem cache (^1.0).)</font>
+<font color="#EF2929">laravel/framework suggests installing league/flysystem-sftp (Required to use the Flysystem SFTP driver (^1.0).)</font>
+<font color="#EF2929">laravel/framework suggests installing moontoast/math (Required to use ordered UUIDs (^1.1).)</font>
+<font color="#EF2929">laravel/framework suggests installing nyholm/psr7 (Required to use PSR-7 bridging features (^1.2).)</font>
+<font color="#EF2929">laravel/framework suggests installing pda/pheanstalk (Required to use the beanstalk queue driver (^4.0).)</font>
+<font color="#EF2929">laravel/framework suggests installing pusher/pusher-php-server (Required to use the Pusher broadcast driver (^4.0).)</font>
+<font color="#EF2929">laravel/framework suggests installing symfony/cache (Required to PSR-6 cache bridge (^5.0).)</font>
+<font color="#EF2929">laravel/framework suggests installing symfony/filesystem (Required to create relative storage directory symbolic links (^5.0).)</font>
+<font color="#EF2929">laravel/framework suggests installing symfony/psr-http-message-bridge (Required to use PSR-7 bridging features (^2.0).)</font>
+<font color="#EF2929">laravel/framework suggests installing wildbit/swiftmailer-postmark (Required to use Postmark mail driver (^3.0).)</font>
+<font color="#EF2929">guzzlehttp/psr7 suggests installing zendframework/zend-httphandlerrunner (Emit PSR-7 responses)</font>
+<font color="#EF2929">psy/psysh suggests installing ext-pcntl (Enabling the PCNTL extension makes PsySH a lot happier :))</font>
+<font color="#EF2929">psy/psysh suggests installing ext-pdo-sqlite (The doc command requires SQLite to work.)</font>
+<font color="#EF2929">psy/psysh suggests installing hoa/console (A pure PHP readline implementation. You&apos;ll want this if your PHP install doesn&apos;t already support readline or libedit.)</font>
+<font color="#EF2929">filp/whoops suggests installing whoops/soap (Formats errors as SOAP responses)</font>
+<font color="#EF2929">facade/ignition suggests installing laravel/telescope (^3.1)</font>
+<font color="#EF2929">sebastian/global-state suggests installing ext-uopz (*)</font>
+<font color="#EF2929">phpunit/php-code-coverage suggests installing ext-xdebug (^2.7.2)</font>
+<font color="#EF2929">phpunit/phpunit suggests installing ext-soap (*)</font>
+<font color="#EF2929">phpunit/phpunit suggests installing ext-xdebug (*)</font>
+<font color="#EF2929">phpunit/phpunit suggests installing phpunit/php-invoker (^2.0.0)</font>
+<font color="#4E9A06">Generating optimized autoload files</font>
+Removing intermediate container 910a6d8b9666
+ ---&gt; 8718c2d6be6c
+
+Step 6/27 : FROM node:12.12 as frontend
+12.12: Pulling from library/node
+9a0b0ce99936: Pulling fs layer
+db3b6004c61a: Pulling fs layer
+f8f075920295: Pulling fs layer
+6ef14aff1139: Waiting
+0bbd8b48260f: Waiting
+524be717efb1: Waiting
+b794d97ee620: Waiting
+e26feda21312: Waiting
+9ebb75410987: Waiting
+<font color="#CC0000">ERROR</font>: Service &apos;myapp&apos; failed to build: error pulling image configuration: Get https://production.cloudflare.docker.com/registry-v2/docker/registry/v2/blobs/sha256/97/977e59b234b78e803a8a8c87d05388762195d049a2b3294c591a7c34255b4e06/data?verify=1589582020-CgeC7KF6MLtDkYqktsPBZuay%2ByQ%3D: dial tcp: lookup production.cloudflare.docker.com: no such host
+<font color="#8AE234"><b>forsan@dev-ibrahim</b></font>:<font color="#729FCF"><b>~/Desktop/myapp</b></font>$ 
+</pre>
