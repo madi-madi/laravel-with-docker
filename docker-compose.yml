@@ -1,0 +1,42 @@
+
+version: '3.5'
+
+services:
+  myapp:
+    build:
+      context: '.'
+# first we set apache to be run under user www-data
+      args:
+        uid: ${UID}
+    environment:
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
+
+    volumes:
+      - .:/var/www/html
+# exposing port 8000 for our application inside the container, because run as a regular user apache cannot bind to system ports
+    ports:
+      - 8000:8000
+    links:
+      - mysql-db
+
+  mysql-db:
+    image: mysql:8.0
+# use mysql_native authentication in order to be able to login to MySQL server using user and password
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - dbdata:/var/lib/mysql
+    env_file:
+      - .env
+# setup a newly created user with password and full database rights on the laravel database
+    environment:
+      - MYSQL_ROOT_PASSWORD=secure
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+
+# create persistent volume for the MySQL data storage
+volumes:
+  dbdata:
+
