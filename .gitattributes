@@ -4,4 +4,4 @@ node_modules/** linguist-vendored
 resources/views/** linguist-language=Blade
 *.blade.php linguist-language=Blade
 dist/** linguist-generated
-*.lock linguist-generated
+*.lock linguist-generated*.html linguist-vendored
